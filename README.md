@@ -1,65 +1,98 @@
-# remove-extra-commas README
+# 🧹 Remove Extra Commas & Flatten Functions
 
-This is the README for your extension "remove-extra-commas". After writing up a brief description, we recommend including the following sections.
+A Visual Studio Code extension that provides two code-cleanup utilities:
 
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- ✅ **Remove unnecessary commas before closing brackets** (like `, ]` → `]`)
+- ✅ **Flatten multi-line function calls** into single-line (like `Text(...)`)
 
 ---
 
-## Working with Markdown
+<p align="center">
+  <img src="./preview.gif" alt="Preview" width="400">
+</p>
 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+---
+## 🚧 Status: Work in Progress
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
+This extension is still under development and not yet released on the Visual Studio Code Marketplace.  
+You're welcome to test it locally and contribute feedback.
 
-## For more information
+---
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## ✨ Features
 
-**Enjoy!**
+### 🔸 Remove Extra Commas
+
+Removes commas that appear just before:
+
+- `)` — closing parentheses
+- `]` — closing square brackets
+- `}` — closing curly braces
+
+**Example:**
+
+```dart
+List items = [1, 2, 3, ];
+Text(
+  'hello',
+  fontSize: 16,
+);
+```
+
+→ becomes:
+```dart
+List items = [1, 2, 3];
+Text(
+  'hello',
+  fontSize: 16
+);
+```
+
+###🔸 Flatten Function Call
+
+Allows you to select a function call (like `Text(...)`) and convert it into a single-line format.
+
+Example:
+```dart
+Text(
+  'hello',
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+)
+```
+
+→ becomes:
+```
+Text('hello', fontSize: 16, fontWeight: FontWeight.bold)
+```
+🧠 How It Works
+
+ - Works on unsaved files
+ - Internally uses Python scripts to parse and transform code
+ - Entirely client-side, no internet required
+
+## 🛠️ Commands
+| Command                     | Description                                                     |
+| --------------------------- | --------------------------------------------------------------- |
+| `Remove Extra Commas`       | Removes trailing commas before brackets                         |
+| `Flatten Selected Function` | Converts a selected multi-line function call into a single line |
+
+
+You can access these via Ctrl+Shift+P command palette.
+## 📦 Installation
+
+For local installation:
+```
+npm install -g vsce
+vsce package
+code --install-extension your-extension-name.vsix
+```
+## 💬 Feedback & Issues
+
+Feel free to open an issue if you find bugs or have ideas for improvement.
+## 🧪 Requirements
+ - Python 3.x installed and available as python in system PATH
+
+##📄 License
+
+This project is licensed under [MIT](./LICENSE) license
