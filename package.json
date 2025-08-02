@@ -1,0 +1,22 @@
+{
+  "name": "remove-extra-commas",
+  "displayName": "Remove Extra Commas",
+  "description": "Simple VScode extension to remove extra commas after brackets and flatten flutter functions calls to 1 line",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.removeExtraCommas",
+        "title": "Remove Extra Commas Before Brackets"
+      },
+      {
+        "command": "extension.flattenSelectedFunction",
+        "title": "Flatten Selected Function"
+      }
+    ]
+  }
+}
