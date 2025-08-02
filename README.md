@@ -1,4 +1,4 @@
-# 🧹 Remove Extra Commas & Flatten Functions
+# 🧹 Simple Code Cleaner
 
 A Visual Studio Code extension that provides two code-cleanup utilities:
 
@@ -48,7 +48,7 @@ Text(
 );
 ```
 
-###🔸 Flatten Function Call
+### 🔸 Flatten Function Call
 
 Allows you to select a function call (like `Text(...)`) and convert it into a single-line format.
 
@@ -87,12 +87,23 @@ npm install -g vsce
 vsce package
 code --install-extension your-extension-name.vsix
 ```
+
+## 🛣️ Roadmap
+ - [x] Remove extra commas
+ - [x] Flatten funcion
+ - [ ] Flatten List/Map
+ - [ ] Chaining flatten
+ - [ ] Remove trailing whitespaces
+ - [ ] Multi-language support
+ - [ ] Linter integrations
+ - [ ] Publish to VScode extension hub
+
 ## 💬 Feedback & Issues
 
 Feel free to open an issue if you find bugs or have ideas for improvement.
 ## 🧪 Requirements
  - Python 3.x installed and available as python in system PATH
 
-##📄 License
+## 📄 License
 
 This project is licensed under [MIT](./LICENSE) license
