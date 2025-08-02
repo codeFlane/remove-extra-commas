@@ -1,5 +1,10 @@
 # 🧹 Remove Extra Commas & Flatten Functions
-
+<p align="center">
+  <img src="https://img.shields.io/badge/status-WIP-yellow.svg" alt="Work in Progress" />
+  <img src="https://img.shields.io/badge/VSCode-Compatible-blue.svg" alt="VSCode Compatible" />
+  <img src="https://img.shields.io/badge/Python-3.x-blue.svg" alt="Python 3.x" />
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License" />
+</p>
 A Visual Studio Code extension that provides two code-cleanup utilities:
 
 - ✅ **Remove unnecessary commas before closing brackets** (like `, ]` → `]`)
@@ -7,9 +12,7 @@ A Visual Studio Code extension that provides two code-cleanup utilities:
 
 ---
 
-<p align="center">
-  <img src="./preview.gif" alt="Preview" width="400">
-</p>
+![Preview](./preview.gif)
 
 ---
 ## 🚧 Status: Work in Progress
